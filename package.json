@@ -1,0 +1,22 @@
+{
+  "name": "who-deleted-me",
+  "version": "1.0.0",
+  "description": "用 Express / Koa 写一个可视化的扫描好友的小玩具",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chang0022/who-deleted-me.git"
+  },
+  "author": "Neo Chang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chang0022/who-deleted-me/issues"
+  },
+  "homepage": "https://github.com/chang0022/who-deleted-me#readme",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}
