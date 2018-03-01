@@ -5,8 +5,9 @@ const route = require('./out-first-route')
 const app = fastify()
 
 app.register(db, {
-  url: 'mongodb://neo:chang123@localhost'
+  url: 'mongodb://neo:chang123@localhost:27017/?authMechanism=SCRAM-SHA-1&authSource=admin'
 })
+
 app.register(route)
 
 const start = async () => {

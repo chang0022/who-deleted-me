@@ -1,3 +1,5 @@
+const ObjectID = require('mongodb').ObjectID
+
 async function routes(app, opts) {
   const database = app.mongo.db('store')
   const collection = database.collection('manufacturers')
@@ -8,7 +10,18 @@ async function routes(app, opts) {
 
   app.get('/manufacturers', async (request, reply) => {
     try {
-      return await collection.findAll()
+      const data = await collection.find({}).toArray()
+      return data
+    } catch (err) {
+      request.log.error(err)
+      return new Error('Something went wrong')
+    }
+  })
+
+  app.get('/manufacturers/:id', async (request, reply) => {
+    try {
+      const id = await collection.findOne({ _id: ObjectID(request.params.id) })
+      return id
     } catch (err) {
       request.log.error(err)
       return new Error('Something went wrong')

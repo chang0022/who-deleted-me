@@ -7,12 +7,11 @@ async function dbConnector(app, opts) {
 
   try {
     const db = await MongoClient.connect(url, opts)
+    app.decorate('mongo', db)
   } catch (err) {
     app.log.error(err)
     return new Error('Something went wrong')
   }
-
-  app.decorate('mongo', db)
 }
 
 module.exports = fastifyPlugin(dbConnector)
