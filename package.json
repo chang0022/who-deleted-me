@@ -10,9 +10,12 @@
     "unit": "jest --config test/unit/jest.conf.js --coverage",
     "test": "npm run unit",
     "lint": "eslint --ext .js,.vue src test/unit",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "compile": "babel wechat -d lib -s"
   },
   "dependencies": {
+    "axios": "^0.18.0",
+    "fastify": "^1.0.0-rc.3",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },
@@ -73,9 +76,5 @@
     "node": ">= 6.0.0",
     "npm": ">= 3.0.0"
   },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not ie <= 8"
-  ]
+  "browserslist": ["> 1%", "last 2 versions", "not ie <= 8"]
 }
