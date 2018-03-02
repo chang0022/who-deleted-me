@@ -6,19 +6,19 @@ const app = fastify({
 
 const Wechat = require('../lib')
 const wx = new Wechat()
-console.log(wx.getUUID())
+
 app.get('/uuid', async (request, reply) => {
   try {
-    request.log.info('Some info about the current request')
-    return {}
+    const UUID = await wx.getUUID()
+    return { UUID: UUID }
   } catch (err) {
     request.log.error(err)
-    return new Error('Get UUID went wrong')
+    return new Error('获取UUID失败')
   }
 })
 const start = async () => {
   try {
-    await app.listen(2333)
+    await app.listen(2333, '0.0.0.0')
     app.log.info('Server is running')
   } catch (err) {
     app.log.error(err)
