@@ -1,9 +1,27 @@
 # who-deleted-me
 
-~~用 Express / Koa 写一个可视化的扫描好友的小玩具~~
+> A Vue.js project
 
-~~项目开启，一头雾水。最后采用比较熟悉的 Express 吧。~~
+## Build Setup
 
-#### Update 2018-02-27
+``` bash
+# install dependencies
+npm install
 
-创建了库后就没有管，今天重新进行开发吧~ :joy:
+# serve with hot reload at localhost:8080
+npm run dev
+
+# build for production with minification
+npm run build
+
+# build for production and view the bundle analyzer report
+npm run build --report
+
+# run unit tests
+npm run unit
+
+# run all tests
+npm test
+```
+
+For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
